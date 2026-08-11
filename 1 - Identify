@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main() {
+    char input[100];
+    int i = 0;
+
+    printf("Enter an expression: ");
+    fgets(input, sizeof(input), stdin);
+
+    printf("\nIdentifiers:\n");
+    printf("Constants:\n");
+    printf("Operators:\n");
+
+    i = 0;
+    while (input[i] != '\0') {
+
+        /* Check for Identifier */
+        if (isalpha(input[i]) || input[i] == '_') {
+            char id[50];
+            int j = 0;
+
+            while (isalnum(input[i]) || input[i] == '_') {
+                id[j++] = input[i++];
+            }
+            id[j] = '\0';
+
+            printf("Identifier: %s\n", id);
+        }
+
+        /* Check for Constant */
+        else if (isdigit(input[i])) {
+            char num[50];
+            int j = 0;
+
+            while (isdigit(input[i])) {
+                num[j++] = input[i++];
+            }
+            num[j] = '\0';
+
+            printf("Constant  : %s\n", num);
+        }
+
+        /* Check for Operators */
+        else if (strchr("+-*/=%<>!", input[i])) {
+            printf("Operator  : %c\n", input[i]);
+            i++;
+        }
+
+        else {
+            i++;
+        }
+    }
+
+    return 0;
+}
