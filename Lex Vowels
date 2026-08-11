@@ -1,0 +1,22 @@
+%{
+#include<stdio.h>
+int count=0;
+%}
+
+%%
+[aAeEiIoOuU]    { printf("%s is a vowel\n",yytext); count++; }
+[a-zA-Z]        ;
+\n              { printf("Total vowels = %d\n",count); return 0; }
+%%
+
+int main()
+{
+    printf("Enter String: ");
+    yylex();
+    return 0;
+}
+
+int yywrap()
+{
+    return 1;
+}
