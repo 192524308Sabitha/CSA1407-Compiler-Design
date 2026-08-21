@@ -1,0 +1,13 @@
+main is keyword
+int is keyword
+a is identifier
+b is identifier
+c is identifier
+c is identifier
+= is operator
+b is identifier
++ is operator
+c is identifier
+% is operator
+printfd is identifier
+c is identifier
