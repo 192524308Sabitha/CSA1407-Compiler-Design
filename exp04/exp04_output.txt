@@ -1,0 +1,8 @@
+Enter any operator:>=
+Greater than or equal
+<=
+Less than or equal
+==
+Equal to
+&&
+Logical AND
